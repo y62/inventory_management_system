@@ -1,0 +1,461 @@
+/* ---------------------------------------------------
+    GENERAL
+----------------------------------------------------- */
+
+body {
+    overflow-x: hidden;
+    background-color: #eef0f8;
+}
+
+.container-fluid {
+    padding: 0 2rem;
+}
+
+.btn {
+    border-radius: 5px !important;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.btn-primary {
+    background-color: #f3f6f9;
+    color: #50c4fc;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR
+----------------------------------------------------- */
+
+#sidebar-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    z-index: 98;
+    -webkit-box-shadow: 5px 0 10px rgba(70,78,95,.05);
+    box-shadow: 5px 0 10px rgba(70,78,95,.05);
+    background-color: #50c4fc;
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#sidebar-wrapper .sidebar-heading img {
+    height: 30px;
+}
+
+#sidebar-wrapper .svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+#sidebar-wrapper .list-group {
+    margin: 2.5rem 0;
+    align-items: center;
+}
+
+#sidebar-wrapper .nav-link {
+    height: 45px;
+    width: 45px;
+    padding: 8px;
+    text-align: center;
+}
+
+#sidebar-wrapper .nav-link.active {
+    background-color: #f3f6f9;
+    border-radius: 5px;
+}
+
+#sidebar-wrapper .nav-link.active .svg {
+    fill: #50c4fc;
+}
+
+/* ---------------------------------------------------
+    TOP NAVBAR
+----------------------------------------------------- */
+
+.navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 80px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
+    box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
+    -webkit-transition: height .3s ease;
+    transition: height .3s ease;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+}
+
+.navbar .navbar-brand {
+    flex: 1;
+}
+
+.navbar .form-inline {
+    flex: 1;
+    position: relative;
+}
+
+.navbar .form-inline .form-control {
+    height: 45px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #fff;
+    margin: 0 !important;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(82,63,105,.08);
+}
+
+.navbar .form-inline .btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 70px;
+}
+
+.navbar .navbar-nav-wrapper {
+    flex: 1;
+}
+
+.navbar .navbar-nav {
+    float: right;
+}
+
+.navbar .initial {
+    width: 40px;
+    height: 40px;
+    background-color: #def4fe;
+    color: #50c4fc;
+    padding: 8px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.navbar .user-info {
+    margin-right: 15px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.navbar .user-info .name {
+    font-weight: 500;
+}
+
+.navbar .user-info .role {
+    font-weight: 500;
+    color: #444;
+}
+
+.navbar .notification {
+    padding: 6px 10px;
+}
+
+.navbar .notification .stage {
+    position: relative;
+}
+
+.navbar .notification .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.navbar .notification .icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.navbar .notification .icon:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    content: '';
+    box-shadow: inset 0 0 0 1px #50c4fc;
+    transition: transform 0.2s, opacity 0.2s;
+    animation: pulsing 2.7s infinite;
+}
+
+.navbar .notification .pulsing:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    content: '';
+    box-shadow: inset 0 0 0 1px #50c4fc;
+    transition: transform 0.2s, opacity 0.2s;
+    animation: pulsing 2.7s infinite;
+}
+
+.navbar .language {
+    padding: 7px 10px;
+}
+
+.navbar .language .svg {
+    width: 22px;
+    height: 22px;
+}
+
+@keyframes pulsing {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* ---------------------------------------------------
+    PACE CONTENT
+----------------------------------------------------- */
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.page-content {
+    padding: 2rem;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.page-content .row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+    flex: 1;
+    height: 100%;
+}
+
+.card-custom {
+    height: 100%;
+    -webkit-box-shadow: 0 0 30px 0 rgba(82,63,105,.05);
+    box-shadow: 0 0 30px 0 rgba(82,63,105,.05);
+    border: 0;
+    border-radius: 5px;
+}
+
+.card-header {
+    background-color: transparent;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.card-header .description {
+    font-size: 14px;
+    margin-top: 2rem;
+    color: rgba(0,0,0,.5);
+}
+
+.card-body.actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: stretch;
+    padding: 2rem;
+    padding-top: 15rem;
+}
+
+.card-body .category {
+    flex: 1;
+    min-width: calc(50% - 2rem);
+    margin-left: 2rem;
+    background-color: #f0f0f0;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.card-body .category:nth-child(odd) {
+    margin-left: 0;
+}
+
+.card-body .category .svg {
+    height: 35px;
+    width: 35px;
+    margin-bottom: 10px;
+}
+
+.card-body .category .text {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.card-body .category.new-product {
+    background-color: #fff4de;
+}
+
+.card-body .category.new-product .svg {
+    fill: #ffa800;
+}
+
+.card-body .category.new-product .text {
+    color: #ffa800;
+}
+
+.card-body .category.new-batch {
+    background-color: #e1f0ff;
+}
+
+.card-body .category.new-batch .svg {
+    fill: #3699ff;
+}
+
+.card-body .category.new-batch .text {
+    color: #3699ff;
+}
+
+.card-body .category.statistics {
+    background-color: #eee5ff;
+}
+
+.card-body .category.statistics .svg {
+    fill: #8950fc;
+}
+
+.card-body .category.statistics .text {
+    color: #8950fc;
+}
+
+.card-body .category.settings {
+    background-color: #ffe2e5;
+}
+
+.card-body .category.settings .svg {
+    fill: #f64e60;
+}
+
+.card-body .category.settings .text {
+    color: #f64e60;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    font-weight: 600;
+    color: #b5b5c3!important;
+    font-size: .9rem;
+    text-transform: uppercase;
+    border-top: 0;
+    border-bottom: 1px solid #ecf0f3;
+    width: 200px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    border-top: 1px solid #ecf0f3;
+}
+
+.table .status {
+    width: 300px;
+}
+
+.table .item-type {
+    font-weight: 500;
+}
+
+.table .soon-exp {
+    max-width: 130px;
+    text-align: center;
+    background-color: #fff4de;
+    border-radius: 5px;
+    color: #ffa800;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.table .exp {
+    max-width: 130px;
+    text-align: center;
+    background-color: #ffe2e5;
+    border-radius: 5px;
+    color: #f64e60;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.table .date {
+    font-weight: 500;
+    color: #50c4fc;
+}
+
+.table .btn-light {
+    color: #80808f;
+    background-color: #f3f6f9;
+    height: 35px;
+    width: 35px;
+    padding: 5px 5px;
+    line-height: 1;
+    margin-left: 0.5rem;
+}
+
+.table .btn-light .svg {
+    width: 20px;
+    height: 20px;
+    fill: #50c4fc;
+}
+
+/* ---------------------------------------------------
+    SCREEN - LARGE
+----------------------------------------------------- */
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
