@@ -29,7 +29,4 @@ public class ItemController {
     itemRepo.save(item);
     return "redirect:/item/new";
     }
-
-
-
 }

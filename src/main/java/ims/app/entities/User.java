@@ -1,5 +1,6 @@
 package ims.app.entities;
 
+
 import javax.persistence.*;
 import java.util.List;
 
