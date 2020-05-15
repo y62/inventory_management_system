@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
+<form action="/item/save" th:object="${item}" method="post">
+
+    <input type="text" placeholder="Item name" th:field="${item.itemName}">
+    <input type="text" placeholder="Producer" th:field="${item.producer}">
+    <button type="submit">Create item</button>
+
+
+</form>
 </body>
 </html>

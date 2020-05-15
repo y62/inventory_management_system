@@ -7,7 +7,7 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long categoryId;
     private String categoryName;
 
@@ -19,6 +19,14 @@ public class Category {
     private User user;
 
     public Category() {
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public Category(String categoryName) {
