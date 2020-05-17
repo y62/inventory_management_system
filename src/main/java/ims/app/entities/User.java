@@ -15,7 +15,7 @@ public class User {
     private String role;
 
     @OneToMany(mappedBy = "user")
-    private List<Item> items;
+    private List<Product> products;
 
     @OneToMany(mappedBy = "user")
     private List<Category> categories;

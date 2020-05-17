@@ -17,7 +17,7 @@ public class Batch {
 
     @ManyToOne
     @JoinColumn(name = "item_id")
-    private Item item;
+    private Product product;
 
     public Batch() {
     }

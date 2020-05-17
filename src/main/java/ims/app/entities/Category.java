@@ -7,12 +7,12 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long categoryId;
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
-    private List<Item> items;
+    private List<Product> products;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -21,12 +21,12 @@ public class Category {
     public Category() {
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public Category(String categoryName) {

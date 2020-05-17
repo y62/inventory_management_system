@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>IMS</title>
 
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="css/tempusdominus-bootstrap-4.min.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/tempusdominus-bootstrap-4.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/moment.min.js"></script>
-    <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="js/tempusdominus-bootstrap-4.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="../js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
 
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="card-body actions">
-                            <div class="category new-product">
+                            <a th:href="@{/product/add}" class="category new-product">
                                 <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
@@ -85,7 +85,7 @@
                                 <div class="text">
                                     Tilføj produkt
                                 </div>
-                            </div>
+                            </a>
                             <div class="category new-batch">
                                 <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -203,7 +203,7 @@
                                     Se statistik
                                 </div>
                             </div>
-                            <div class="category settings">
+                            <a th:href="@{/settings/settings-page}" class="category settings">
                                 <svg class="svg" height="511pt" viewBox="0 1 511 511.999" width="511pt"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +290,7 @@
                                 <div class="text">
                                     Indstillinger
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -343,7 +343,8 @@
                                         </td>
                                         <td class="pr-0 text-right">
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                                                      xml:space="preserve">
@@ -389,7 +390,8 @@
 </svg>
                                             </button>
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512.001 512.001"
                                                      style="enable-background:new 0 0 512.001 512.001;"
@@ -454,7 +456,8 @@
                                         </td>
                                         <td class="pr-0 text-right">
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                                                      xml:space="preserve">
@@ -500,7 +503,8 @@
 </svg>
                                             </button>
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512.001 512.001"
                                                      style="enable-background:new 0 0 512.001 512.001;"
@@ -565,7 +569,8 @@
                                         </td>
                                         <td class="pr-0 text-right">
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                                                      xml:space="preserve">
@@ -611,7 +616,8 @@
 </svg>
                                             </button>
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512.001 512.001"
                                                      style="enable-background:new 0 0 512.001 512.001;"
@@ -676,7 +682,8 @@
                                         </td>
                                         <td class="pr-0 text-right">
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                                                      xml:space="preserve">
@@ -722,7 +729,8 @@
 </svg>
                                             </button>
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512.001 512.001"
                                                      style="enable-background:new 0 0 512.001 512.001;"
@@ -787,7 +795,8 @@
                                         </td>
                                         <td class="pr-0 text-right">
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                                                      xml:space="preserve">
@@ -833,7 +842,8 @@
 </svg>
                                             </button>
                                             <button type="button" class="btn btn-light">
-                                                <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="svg" version="1.1" id="Capa_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      viewBox="0 0 512.001 512.001"
                                                      style="enable-background:new 0 0 512.001 512.001;"

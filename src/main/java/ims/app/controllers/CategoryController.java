@@ -1,9 +1,9 @@
 package ims.app.controllers;
 
 import ims.app.dao.CategoryRepo;
-import ims.app.dao.ItemRepo;
+import ims.app.dao.ProductRepo;
 import ims.app.entities.Category;
-import ims.app.entities.Item;
+import ims.app.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,26 +22,36 @@ public class CategoryController {
     CategoryRepo categoryRepo;
 
     @Autowired
-    ItemRepo itemRepo;
+    ProductRepo productRepo;
 
-    @GetMapping("/new")
-    public String newCategory(Model model, Item item) {
-        Category aCategory = new Category();
-        List<Item> items = itemRepo.findAll();
-        model.addAttribute("allItems", items);
-        model.addAttribute("category", aCategory);
-        return "category/new-category";
+    private String categoryList = "category/category-list";
+    private String addCategory = "category/add-category";
+    private String redirectCategory = "redirect:/category/category-list";
+
+    @GetMapping("/list")
+    public String list(Model model) {
+        model.addAttribute("cat", categoryRepo.findAll());
+        return categoryList;
+    }
+
+    @GetMapping("/add")
+    public String add(Model model, Product product) {
+        Category category = new Category();
+        List<Product> products = productRepo.findAll();
+        model.addAttribute("allProd", products);
+        model.addAttribute("cat", category);
+        return addCategory;
     }
 
     @PostMapping("/save")
-    public String saveCategory(Category category, @RequestParam List<Long> items, Model model) {
+    public String save(Category category, @RequestParam List<Long> products) {
         categoryRepo.save(category);
-        Iterable<Item> itemIterable = itemRepo.findAllById(items);
-        for (Item item : itemIterable) {
-            item.setCategory(category);
-    itemRepo.save(item);
+        Iterable<Product> productIterable = productRepo.findAllById(products);
+        for (Product product : productIterable) {
+            product.setCategory(category);
+            productRepo.save(product);
         }
-        return "redirect:/category/new";
+        return redirectCategory;
     }
 
 }

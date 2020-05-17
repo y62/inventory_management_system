@@ -2,8 +2,8 @@
 
 <div th:fragment="sidebar-nav" id="sidebar-wrapper">
     <div class="sidebar-heading">
-        <a href="#">
-            <img src="images/imslogo.png">
+        <a th:href="@{/}">
+            <img src="../images/imslogo.png">
         </a>
     </div>
     <div class="list-group">
@@ -229,7 +229,7 @@
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="#" class="nav-link">
+                <a th:href="@{/product/add}" class="nav-link">
                     <svg class="svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -273,7 +273,7 @@
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="#" class="nav-link">
+                <a th:href="@{/user/add}" class="nav-link">
                     <svg class="svg" height="511pt" viewBox="0 1 511 511.999" width="511pt"
                          xmlns="http://www.w3.org/2000/svg">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -334,7 +334,7 @@
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="#" class="nav-link">
+                <a th:href="@{/settings/settings-page}" class="nav-link">
                     <svg class="svg" height="511pt" viewBox="0 1 511 511.999" width="511pt"
                          xmlns="http://www.w3.org/2000/svg">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"

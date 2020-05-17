@@ -3,26 +3,26 @@ package ims.app.entities;
 import javax.persistence.*;
 
 @Entity
-public class Producer {
+public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long producerId;
+    private long vendorId;
     private String cvr;
 
 
-    public Producer() {
+    public Vendor() {
     }
 
-    public Producer(String cvr) {
+    public Vendor(String cvr) {
         this.cvr = cvr;
     }
 
-    public long getProducerId() {
-        return producerId;
+    public long getVendorId() {
+        return vendorId;
     }
 
-    public void setProducerId(long producerId) {
-        this.producerId = producerId;
+    public void setVendorId(long producerId) {
+        this.vendorId = vendorId;
     }
 
     public String getCvr() {

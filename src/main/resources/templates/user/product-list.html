@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="dk" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>IMS</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/tempusdominus-bootstrap-4.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="../js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <nav th:replace="/includes/sidebar-nav :: sidebar-nav"></nav>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <!-- Top navbar -->
+        <nav th:replace="/includes/top-navbar :: top-navbar"></nav>
+
+        <div class="container-fluid page-content">
+            <div class="container">
+                <div class="card card-custom">
+                    <div class="card-header">
+                        Alle kategorier
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 d-flex flex-column justify-content-between">
+                                <div class="table-responsive">
+                                    <table class="table data-table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Fulde navn</th>
+                                            <th scope="col">Brugernavn</th>
+                                            <th scope="col">Rolle</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="product: ${usr}">
+                                            <td th:text="${user.name}"></td>
+                                            <td th:text="${user.username}"></td>
+                                            <td th:text="${user.role}"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
