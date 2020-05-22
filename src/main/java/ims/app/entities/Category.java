@@ -14,7 +14,8 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 

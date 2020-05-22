@@ -1,14 +1,17 @@
 package ims.app.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Vendor {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long vendorId;
     private String cvr;
 
+    @OneToMany(mappedBy = "vendor")
+    private List<Product> products;
 
     public Vendor() {
     }

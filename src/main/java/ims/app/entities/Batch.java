@@ -1,6 +1,7 @@
 package ims.app.entities;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -9,20 +10,22 @@ public class Batch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long batchId;
     private int quantity;
-    private String expirationDate;
+    private Date expirationDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public Batch() {
     }
 
-    public Batch(int quantity, String expirationDate) {
+    public Batch(int quantity, Date expirationDate) {
         this.quantity = quantity;
         this.expirationDate = expirationDate;
     }
@@ -43,11 +46,11 @@ public class Batch {
         this.quantity = quantity;
     }
 
-    public String getExpirationDate() {
+    public Date getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(String expirationDate) {
+    public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
 }
