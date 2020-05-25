@@ -9,8 +9,9 @@ public class Batch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long batchId;
-    private int quantity;
-    private Date expirationDate;
+    private int startQuantity;
+    private int endQuantity;
+    private String expirationDate;
 
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
             fetch = FetchType.LAZY)
@@ -25,8 +26,9 @@ public class Batch {
     public Batch() {
     }
 
-    public Batch(int quantity, Date expirationDate) {
-        this.quantity = quantity;
+    public Batch(int startQuantity, int finishQuantity, String expirationDate) {
+        this.startQuantity = startQuantity;
+        this.endQuantity = finishQuantity;
         this.expirationDate = expirationDate;
     }
 
@@ -38,19 +40,27 @@ public class Batch {
         this.batchId = batchId;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getStartQuantity() {
+        return startQuantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setStartQuantity(int startQuantity) {
+        this.startQuantity = startQuantity;
     }
 
-    public Date getExpirationDate() {
+    public int getEndQuantity() {
+        return endQuantity;
+    }
+
+    public void setEndQuantity(int finishQuantity) {
+        this.endQuantity = finishQuantity;
+    }
+
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 }

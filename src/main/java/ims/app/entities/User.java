@@ -13,6 +13,7 @@ public class User {
     private String password;
     private String name;
     private String role;
+    private int enabled = 1;
 
     @OneToMany(mappedBy = "user")
     private List<Product> products;
@@ -26,11 +27,12 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String name, String role) {
+    public User(String username, String password, String name, String role, int enabled) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.role = role;
+        this.enabled = enabled;
     }
 
     public long getUserId() {
@@ -71,5 +73,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 }

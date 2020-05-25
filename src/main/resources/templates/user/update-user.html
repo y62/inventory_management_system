@@ -14,7 +14,6 @@
     <script type="text/javascript" src="../js/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="../js/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
-
 </head>
 <body>
 
@@ -81,11 +80,11 @@
                                             </label>
                                             <div class="col-xl-9 d-flex flex-row justify-content-start">
                                                 <label class="checkbox-custom">Administrator
-                                                    <input type="radio" name="role" value="ROLE_USER">
+                                                    <input type="radio" name="role" value="USER">
                                                     <span class="radio"></span>
                                                 </label>
                                                 <label class="checkbox-custom">Almindelig bruger
-                                                    <input type="radio" name="role" value="ROLE_ADMIN">
+                                                    <input type="radio" name="role" value="ADMIN">
                                                     <span class="radio"></span>
                                                 </label>
                                             </div>
@@ -99,7 +98,6 @@
                                 </div>
                             </div>
                             <input type="hidden" th:field="${user.enabled}"/>
-                            <input type="hidden" name="_csrf" th:value="_csrf.token"/>
                         </form>
                     </div>
                 </div>

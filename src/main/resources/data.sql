@@ -26,3 +26,5 @@ INSERT INTO product (product_id, product_name, vendor_id, category_id, user_id) 
 INSERT INTO product (product_id, product_name, vendor_id, category_id, user_id) VALUES (8, 'Onion', 57, 103, 10);
 INSERT INTO product (product_id, product_name, vendor_id, category_id, user_id) VALUES (9, 'Candy', 58, 102, 10);
 INSERT INTO product (product_id, product_name, vendor_id, category_id, user_id) VALUES (10, 'Garlic', 59, 103, 10);
+
+INSERT INTO batch (batch_id, start_quantity, end_quantity, expiration_date, product_id, user_id) VALUES (1, 300, 20, '2020-12-01', 3, 10)
