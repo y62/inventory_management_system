@@ -1,49 +1,59 @@
 package ims.app.security;
 
 
-/*import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;*/
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
-//@Configuration
-//@EnableWebSecurity
-public class SecurityConfiguration {
-    /*
-extends WebSecurityConfigurerAdapter
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Autowired
     DataSource dataSource;
 
     @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    public void configureAuth(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("select username, password, enabled " +
-                        "from user where username = ?" )
-                .authoritiesByUsernameQuery("select username, role " +
-                        " from user where username = ?")
                 .dataSource(dataSource)
-                .passwordEncoder(bCryptPasswordEncoder);
-
+                .usersByUsernameQuery("SELECT username, password, enabled "
+                        + "FROM ims.user "
+                        + "WHERE name = ? ")
+                .authoritiesByUsernameQuery("SELECT username, role FROM ims.user WHERE username = ?");
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-           //     .antMatchers("/user/user-list", "/user/user-list/**").hasRole("ADMIN")
-                .antMatchers("/").permitAll()
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return NoOpPasswordEncoder.getInstance();
+    }
+
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/user/list").hasRole("ADMIN")
+
                 .and()
-                .formLogin();
+                .formLogin()
+                // .loginPage("/sign-in")
+                //.defaultSuccessUrl("/admin", true)
+                //.failureUrl("/sign-in?error=true")
+                .and()
+                .logout()
+                .logoutUrl("/sign-out")
+                .invalidateHttpSession(true)
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/access-denied");
     }
-*/
 }
+
