@@ -1,4 +1,4 @@
-INSERT INTO user (user_id, name, password, role, username) VALUES (10, 'Jon', '1234', 'admin', 'jon62');
+INSERT INTO user (user_id, name, password, role, username) VALUES (10, 'Jon', '1234', 'ROLE_ADMIN', 'jon62');
 
 INSERT INTO category (category_id, category_name, user_id) VALUES (100, 'Frugt', 10);
 INSERT INTO category (category_id, category_name, user_id) VALUES (101, 'Mejeri', 10);
