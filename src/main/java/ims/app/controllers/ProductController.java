@@ -2,12 +2,14 @@ package ims.app.controllers;
 
 import ims.app.dao.ProductRepo;
 import ims.app.entities.Product;
+import ims.app.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -40,5 +42,11 @@ public class ProductController {
     public String save(Product product) {
         productRepo.save(product);
         return redirectProduct;
+    }
+
+    @GetMapping("/delete")
+    public String deleteProduct(@RequestParam("id") Product product) {
+        productRepo.delete(product);
+        return "redirect:/product/list";
     }
 }

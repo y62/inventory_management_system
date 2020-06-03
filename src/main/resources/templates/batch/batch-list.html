@@ -45,19 +45,22 @@
                                     <table class="table data-table">
                                         <thead>
                                         <tr>
-                                            <th scope="col">Kategori ID</th>
-                                            <th scope="col">Kategori</th>
+                                            <th scope="col">Start Quantity</th>
+                                            <th scope="col">End Quantity</th>
+                                            <th scope="col">Expiration Date</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Option</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="category: ${cat}">
-                                            <td th:text="${category.categoryId}"></td>
-                                            <td th:text="${category.categoryName}"></td>
+                                        <tr th:each="batch : ${batchList}">
+                                            <td th:text="${batch.startQuantity}"></td>
+                                            <td th:text="${batch.endQuantity}"></td>
+                                            <td th:text="${batch.expirationDate}"></td>
+                                            <td th:text="${batch.status}"></td>
                                             <td>
-                                                <a th:href="@{/category/delete(id=${category.categoryId})}"
-                                                   class="btn btn-info btn-sm">
-                                                    Slet
-                                                </a>
+                                               <p>OPTION</p>
                                             </td>
                                         </tr>
                                         </tbody>

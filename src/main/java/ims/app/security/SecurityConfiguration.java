@@ -25,7 +25,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .dataSource(dataSource)
                 .usersByUsernameQuery("SELECT username, password, enabled "
                         + "FROM ims.user "
-                        + "WHERE name = ? ")
+                        + "WHERE username = ? ")
                 .authoritiesByUsernameQuery("SELECT username, role FROM ims.user WHERE username = ?");
     }
 
@@ -38,7 +38,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/css/**").permitAll()
+               // .antMatchers("/css/**").permitAll()
+                .antMatchers("/").hasRole("ADMIN")
                 .antMatchers("/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/user/list").hasRole("ADMIN")
 

@@ -48,6 +48,4 @@ public class UserController {
       userRepo.delete(user);
       return "redirect:/user/list";
    }
-
-
 }

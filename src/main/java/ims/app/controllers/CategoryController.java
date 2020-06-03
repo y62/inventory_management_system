@@ -54,4 +54,10 @@ public class CategoryController {
         return redirectCategory;
     }
 
+    @GetMapping("/delete")
+    public String deleteCategory(@RequestParam("id") Category category) {
+        categoryRepo.delete(category);
+        return "redirect:/category/list";
+    }
+
 }

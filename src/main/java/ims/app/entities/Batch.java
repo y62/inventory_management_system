@@ -12,6 +12,7 @@ public class Batch {
     private int startQuantity;
     private int endQuantity;
     private String expirationDate;
+    private String status;
 
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
             fetch = FetchType.LAZY)
@@ -26,10 +27,11 @@ public class Batch {
     public Batch() {
     }
 
-    public Batch(int startQuantity, int finishQuantity, String expirationDate) {
+    public Batch(int startQuantity, int endQuantity, String expirationDate, String status) {
         this.startQuantity = startQuantity;
-        this.endQuantity = finishQuantity;
+        this.endQuantity = endQuantity;
         this.expirationDate = expirationDate;
+        this.status = status;
     }
 
     public long getBatchId() {
@@ -62,5 +64,13 @@ public class Batch {
 
     public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
