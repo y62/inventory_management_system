@@ -31,8 +31,4 @@ public class BatchController {
         model.addAttribute("batchList", batchList);
         return "batch/batch-list";
     }
-
-
-
-
 }

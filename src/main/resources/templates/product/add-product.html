@@ -36,8 +36,7 @@
                     <div class="card-header">
                         Tilføj produkt
                         <div class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Beskrivelse...
                         </div>
                     </div>
                     <div class="card-body add-product">
@@ -48,70 +47,15 @@
                                         <div class="content-title">
                                             Produktdetaljer
                                         </div>
-                                        <!--
-                                        <div class="form-group row page">
-                                            <label class="col-xl-3 col-form-label">
-                                                Kategori
-                                            </label>
-                                            <div class="col-xl-9">
-                                                <select class="form-control form-control-lg custom-select custom-select-lg">
-                                                    <option selected>---</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        -->
                                         <div class="form-group row page">
                                             <label class="col-xl-3 col-form-label">
                                                 Produktnavn
                                             </label>
                                             <div class="col-xl-9">
                                                 <input class="form-control form-control-lg" name="productName"
-                                                       type="text" th:field="${product.productName}">
+                                                       type="text" th:field="${prod.productName}">
                                             </div>
                                         </div>
-                                        <div class="form-group row page">
-                                            <label class="col-xl-3 col-form-label">
-                                                Producent
-                                            </label>
-                                            <div class="col-xl-9">
-                                                <input class="form-control form-control-lg" name="vendor" type="text"
-                                                       th:field="${product.vendor}">
-                                            </div>
-                                        </div>
-                                        <!--
-                                        <div class="form-group row page">
-                                            <label class="col-xl-3 col-form-label">
-                                                Enhed for batch
-                                            </label>
-                                            <div class="col-xl-9">
-                                                <input class="form-control form-control-lg" name="vendor" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row page">
-                                            <label class="col-xl-3 col-form-label">
-                                                Kommentar
-                                            </label>
-                                            <div class="col-xl-9">
-                                                <div id="summernote"></div>
-                                            </div>
-                                        </div>
-                                        <script>
-                                            $('#summernote').summernote({
-                                                placeholder: 'Skriv en kommentar her',
-                                                tabsize: 2,
-                                                height: 100,
-                                                toolbar: [
-                                                    // [groupName, [list of button]]
-                                                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                                                    ['color', ['color']],
-                                                    ['para', ['ul', 'ol', 'paragraph']],
-                                                ]
-                                            });
-                                        </script>
-                                        -->
                                     </div>
                                     <div class="d-flex justify-content-end border-top pt-10">
                                         <button type="submit" class="btn btn-success font-weight-bolder px-9 py-4">Opret
