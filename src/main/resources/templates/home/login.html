@@ -15,28 +15,30 @@
     <script type="text/javascript" src="../js/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 </head>
-<body>
+<body class="sign-in">
 
 <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <nav th:replace="/includes/sidebar-nav :: sidebar-nav"></nav>
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-        <!-- Top navbar -->
-        <nav th:replace="/includes/top-navbar :: top-navbar"></nav>
-
         <div class="container-fluid page-content">
-           <div class="container">
-               <div class="card card-custom">
-                   <div class="card-body">
-                       <h3 class="text-center">Kommer snart...</h3>
-                   </div>
-               </div>
-           </div>
+            <div class="content-signin">
+                <h3 class="text-center font-weight-light mb-5">Log ind på<br>Inventory Management System</h3>
+                <form class="mt-5" th:action="@{/sign-in}" th:method="post">
+                    <div th:if="${ErrorParam}" class="failure">Ugyldigt brugernavn eller adgangskode. Prøv igen</div>
+
+                    <div class="input-group mb-2">
+                        <input type="text" name="username" autofocus placeholder="Brugernavn" required class="form-control">
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="password" name="password" minlength="4" required placeholder="Adgangskode" class="form-control">
+                    </div>
+                    <input class="btn btn-success btn-block" type="submit" value="Log ind">
+                </form>
+            </div>
         </div>
+
     </div>
 
 </div>
