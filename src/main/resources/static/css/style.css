@@ -89,7 +89,7 @@ a:hover {
     padding-right: 1.5rem!important;
 }
 
-.btn-success {
+.btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active {
     color: #fff;
     background-color: #50c4fc;
     border-color: #50c4fc;
@@ -512,6 +512,10 @@ a:hover {
 }
 
 .card-body .category .svg {
+    min-height: 35px;
+    max-height: 35px;
+    min-width: 35px;
+    max-width: 35px;
     height: 35px;
     width: 35px;
     margin-bottom: 10px;

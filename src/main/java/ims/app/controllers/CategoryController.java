@@ -24,8 +24,8 @@ public class CategoryController {
     @Autowired
     ProductRepo productRepo;
 
-    private String categoryList = "category/category-list";
     private String addCategory = "category/add-category";
+    private String categoryList = "category/category-list";
     private String redirectCategory = "redirect:/category/category-list";
 
     @GetMapping("/list")
@@ -57,7 +57,7 @@ public class CategoryController {
     @GetMapping("/delete")
     public String deleteCategory(@RequestParam("id") Category category) {
         categoryRepo.delete(category);
-        return "redirect:/category/list";
+        return redirectCategory;
     }
 
 }

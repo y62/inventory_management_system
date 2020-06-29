@@ -32,7 +32,10 @@
             <div class="container">
                 <div class="card card-custom">
                     <div class="card-header">
-                        Alle kategorier
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Alle produkter</span>
+                            <a th:href="@{/product/add}" class="btn btn-success">Tilføj nyt produkt</a>
+                        </div>
                         <div class="description">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
@@ -55,7 +58,7 @@
                                             <td th:text="${product.productName}"></td>
                                             <td>
                                                 <a th:href="@{/product/delete(id=${product.productId})}"
-                                                   class="btn btn-info btn-sm">
+                                                   class="btn btn-success btn-sm">
                                                     Slet
                                                 </a>
                                             </td>

@@ -31,15 +31,16 @@
         <div class="container-fluid page-content">
             <div class="container">
                 <div class="card card-custom">
+                    <form action="/user/save" th:object="${user}" th:method="post">
                     <div class="card-header">
-                        Tilføj bruger
+                        Rediger bruger
                         <div class="description">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="/user/save" th:object="${user}" th:method="post">
+
                             <input type="hidden" th:field="${user.userId}"/>
                             <div class="row justify-content-center">
                                 <div class="col-xl-9 d-flex flex-column justify-content-between">
@@ -80,26 +81,26 @@
                                             </label>
                                             <div class="col-xl-9 d-flex flex-row justify-content-start">
                                                 <label class="checkbox-custom">Administrator
-                                                    <input type="radio" name="role" value="USER">
+                                                    <input type="radio" name="role" value="ROLE_ADMIN">
                                                     <span class="radio"></span>
                                                 </label>
                                                 <label class="checkbox-custom">Almindelig bruger
-                                                    <input type="radio" name="role" value="ADMIN">
+                                                    <input type="radio" name="role" value="ROLE_USER">
                                                     <span class="radio"></span>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end border-top pt-10 mt-15">
-                                        <button type="submit" class="btn btn-success font-weight-bolder px-9 py-4">Opret
+                                        <button type="submit" class="btn btn-success font-weight-bolder px-9 py-4">Rediger
                                             bruger
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <input type="hidden" th:field="${user.enabled}"/>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
