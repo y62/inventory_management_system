@@ -23,7 +23,7 @@ public class ProductController {
 
     private String productList = "product/product-list";
     private String addProduct = "product/add-product";
-    private String redirectProduct = "redirect:/product/product-list";
+    private String redirectProduct = "redirect:/product/list";
 
     @GetMapping("/list")
     public String list(Model model) {
@@ -41,7 +41,7 @@ public class ProductController {
     @PostMapping("/save")
     public String save(Product product) {
         productRepo.save(product);
-        return redirectProduct;
+        return "redirect:/product/list";
     }
 
     @GetMapping("/delete")
