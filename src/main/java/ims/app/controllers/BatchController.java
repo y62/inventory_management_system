@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -18,11 +19,17 @@ public class BatchController {
     @Autowired
     BatchRepo batchRepo;
 
-    @GetMapping("/new")
+    @GetMapping("/add")
     public String newBatch(Model model) {
         Batch batch = new Batch();
         model.addAttribute("batch", batch);
-        return "batch/new-batch";
+        return "batch/add-batch";
+    }
+
+    @PostMapping("/save")
+    public String save(Batch batch) {
+        batchRepo.save(batch);
+        return "redirect:/batch/list";
     }
 
     @GetMapping("/list")
